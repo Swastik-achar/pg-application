@@ -8,7 +8,8 @@ const roomSchema = new Schema({
     },
     occupancy:{
         type:String,
-        enum:['2sharing,3sharing,4sharing'],
+        enum:['2sharing','3sharing','4sharing','null'],
+        default:'null'
         required:true
     },
     price:{
