@@ -3,7 +3,7 @@ const Amenities=require('../models/room')
 module.exports.list=(req,res)=>{
     Amenities.find()
     .then(amenities=>{
-        res.json({amenities})
+        res.json(amenities)
     })
     .catch(err=>res.json(err))
 }
