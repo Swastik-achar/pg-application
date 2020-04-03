@@ -3,7 +3,7 @@ const Room=require('../models/room')
 module.exports.list=(req,res)=>{
     Room.find()
     .then(room=>{
-        res.json({room})
+        res.json(room)
     })
     .catch(err=>res.json(err))
 }
@@ -12,7 +12,9 @@ module.exports.create=(req,res)=>{
     const body=req.body
     const room=new Room(body)
     room.save()
-    .then(room=>res.json(room))
+    .then(room=>{
+        res.json(room)
+    })
     .catch(err=>res.json(err))
 }
 
