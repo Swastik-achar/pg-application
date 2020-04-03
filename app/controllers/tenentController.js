@@ -3,7 +3,7 @@ const Tenant=require('../models/room')
 module.exports.list=(req,res)=>{
     Tenant.find()
     .then(tenant=>{
-        res.json({tenant})
+        res.json(tenant)
     })
     .catch(err=>res.json(err))
 }
@@ -12,7 +12,9 @@ module.exports.create=(req,res)=>{
     const body=req.body
     const tenant=new Tenant(body)
     tenant.save()
-    .then(tenant=>res.json(tenant))
+    .then(tenant=>{
+        res.json(tenant)
+    })
     .catch(err=>res.json(err))
 }
 
