@@ -3,7 +3,7 @@ const Building=require('../models/building')
 module.exports.list=(req,res)=>{
     Building.find()
     .then(building=>{
-        res.json({building})
+        res.json(building)
     })
     .catch(err=>res.json(err))
 }
